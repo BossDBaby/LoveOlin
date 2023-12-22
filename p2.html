@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodbye Olin</title>
+
+     <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+       rel="stylesheet"
+     />
+ 
+     <!-- My Style -->
+     <link rel="stylesheet" href="css/style2.css" />
+</head>
+<body>
+    <img src="image/Olin Kyoufuu All Back.GIF" alt="Olin GIF" id="olingif">
+    <div class="card">
+        <div class="outside">
+          <div class="front">
+            <p>See You Next Time</p>
+            <h1><span>My Lovely</span></h1>
+            <h1>Cristal Rosaline Bell</h1>
+          </div>
+          <div class="back"></div>
+          <h1>&#127873;</h1>
+        </div>
+        <div class="inside">
+            <div class="cake">
+                <h2>Bye Lovely <span>OLIN</span></h2>
+                <div class="top-layer"></div>
+                <div class="middle-layer"></div>
+                <div class="bottom-layer"></div>
+                <div class="candle"></div>
+            </div>
+        </div>
+    </div>
+    <audio autoplay loop id="myAudio">
+      <source src="music/強風オールバック (Kyoufuu All Back) - Ver. @CrystalRosalineBell25.mp3" type="audio/mpeg">
+    </audio>
+
+    <button onclick="playAudio()">Play Music</button>
+    
+    <script>
+    function playAudio() {
+    var audio = document.getElementById("myAudio");
+    audio.play();
+    }
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

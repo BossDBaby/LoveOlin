@@ -1,0 +1,261 @@
+:root {
+    --primary: #e0a8c6;
+    --bg:#ac2932;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--bg)
+}
+
+#olingif {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin-left: 75%;
+    transform: translateY(50%);
+}
+
+.card {
+    width: 640px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 15rem;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+  }
+  .card:hover {
+    transform: rotate(-5deg);
+  }
+  .card:hover .outside {
+    transform: rotateY(-130deg);
+  }
+  .outside,
+  .inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+  }
+  .inside {
+    background: linear-gradient(to left, #f4bbd9, #e0a8c6 30%);
+    line-height: 5;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+  }
+  .outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    cursor: pointer;
+  }
+  .front,
+  .back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+  }
+  .front {
+    background-color: var(--primary);  
+  }
+  .card .front .image {
+    margin: 0 auto;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+  }
+  .back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to right, #f4bbd9, #e0a8c6 30%);
+    background-image: url(../image/Olin_Cute-removebg-preview.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .cake {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+  }
+  .top-layer,
+  .middle-layer,
+  .bottom-layer {
+    height: 80px;
+    width: 240px;
+    background-repeat: repeat;
+    background-size: 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(
+        transparent 50px,
+        #fedbab 50px,
+        #fedbab 60px,
+        transparent 60px
+      ),
+      radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+  }
+  .middle-layer {
+    transform: scale(0.85);
+    top: 72px;
+    animation: rise-1 2s forwards;
+  }
+  @keyframes rise-1 {
+    100% {
+      top: 7px;
+    }
+  }
+  .top-layer {
+    transform: scale(0.7);
+    top: 144px;
+    animation: rise-2 2s forwards;
+  }
+  @keyframes rise-2 {
+    100% {
+      top: 26px;
+    }
+  }
+  .candle {
+    height: 45px;
+    width: 15px;
+    background: repeating-linear-gradient(
+      45deg,
+      #fd3018 0,
+      #fd3018 5px,
+      #ffa89e 5px,
+      #ffa89e 10px
+    );
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: rise-3 1s 2s forwards;
+  }
+  @keyframes rise-3 {
+    100% {
+      bottom: 202px;
+    }
+  }
+  .candle:after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ffa500;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    transform: scale(0) rotate(45deg);
+    left: -1px;
+    animation: flame 1s 2.5s forwards;
+  }
+  @keyframes flame {
+    100% {
+      transform: scale(1) rotate(45deg);
+    }
+  }
+  .outside p {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+  }
+  .outside h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-top:30px ;
+    display: inline-block;
+    letter-spacing: 6px;
+    text-align: center;
+    color: #010101;
+  }
+  .outside h1 span {
+    color: var(--bg);
+    padding-left: 13px;
+  }
+  .inside h2 {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #010101;
+  }
+  .inside h2 span {
+    color: var(--bg);
+  }
+  .inside h1 {
+    font-size: 120px;
+    line-height: 120px;
+  }
+
+  button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: var(--bg);
+    color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 100%;
+    }
+    body {
+      position: absolute;
+      justify-content: center;
+      margin-top: 1rem;
+      margin-right: 20rem;
+      transform: scale(75%);
+      overflow: visible;
+    }
+
+    .card {
+        justify-content: center;
+
+    }
+  }
